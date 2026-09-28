@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: aurevia
+      POSTGRES_USER: aurevia
+      POSTGRES_PASSWORD: aurevia
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U aurevia -d aurevia"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://aurevia:aurevia@postgres:5432/aurevia
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: change-me-in-production
+      ADMIN_EMAIL: admin@aurevia.exchange
+      ADMIN_PASSWORD: ChangeMe_123!
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports: ["3000:3000"]
+volumes:
+  pgdata:

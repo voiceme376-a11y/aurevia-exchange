@@ -1,0 +1,2 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#090a0b;color:#f5f5f5;font-family:Inter,ui-sans-serif,system-ui,sans-serif}.card{background:#111315;border:1px solid #25282c;border-radius:16px}.btn{border-radius:10px;padding:.65rem 1rem;font-weight:600}.gold{color:#d4a72c}.input{width:100%;background:#0b0d0f;border:1px solid #2a2e33;border-radius:10px;padding:.7rem .8rem;outline:none}.input:focus{border-color:#d4a72c}.muted{color:#8d939c}

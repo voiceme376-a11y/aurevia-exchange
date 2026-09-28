@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="flex min-h-screen items-center justify-center bg-black px-6"><div className="text-center"><div className="mx-auto h-10 w-10 animate-spin rounded-full border-2 border-white/10 border-t-amber-400"/><p className="mt-4 text-sm muted">Loading Aurevia Exchange…</p></div></main>}
